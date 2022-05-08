@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/button_rounded_tranparente"
+    android:backgroundTint="@color/Branco"
+    android:layout_width="300dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_height="190dp">
+
+    <RelativeLayout
+        android:id="@+id/lnlConfirmacao"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/lblPergunta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/cinza"
+            android:textStyle="bold"
+            android:lineSpacingExtra="16sp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="Deseja agendar para esta data?\n18/05/2020 às 18:00"/>
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/colorPrimary"
+            android:background="@drawable/button_rounded_bottom"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/lblNao"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Branco"
+                android:layout_weight="50"
+                android:lineSpacingExtra="16sp"
+                android:textStyle="bold"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="NÃO"/>
+
+            <LinearLayout
+                android:id="@+id/lnlseparacao"
+                android:orientation="vertical"
+                android:layout_width="0.4dp"
+                android:layout_height="match_parent"
+                android:background="@color/Branco"/>
+
+            <TextView
+                android:id="@+id/lblSim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Branco"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_weight="50"
+                android:lineSpacingExtra="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="SIM"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lnlVerificando"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imgLoad"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="70dp"
+            android:layout_height="60dp"/>
+
+        <TextView
+            android:id="@+id/lblVerificando"
+            android:layout_marginBottom="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Preto"
+            android:text="Verificando disponibilidade..."/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/lnlResultado"
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/imgResutado"
+                android:layout_width="60dp"
+                android:layout_height="60dp"/>
+
+            <TextView
+                android:id="@+id/lblMsgResultado"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Infelizmente, este horário está indisponpivel"
+                android:textColor="@color/Preto"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/colorPrimary"
+            android:background="@drawable/button_rounded_bottom"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/lblCancelar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Branco"
+                android:layout_weight="50"
+                android:lineSpacingExtra="16sp"
+                android:gravity="center"
+                android:text="CANCELAR"/>
+
+            <LinearLayout
+                android:id="@+id/lnlSeparacaoResult"
+                android:orientation="vertical"
+                android:layout_width="0.75dp"
+                android:layout_height="match_parent"
+                android:background="@color/Branco"/>
+
+            <TextView
+                android:id="@+id/lblResultado"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/Branco"
+                android:layout_weight="50"
+                android:lineSpacingExtra="16sp"
+                android:gravity="center"
+                android:text="ALTERAR"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

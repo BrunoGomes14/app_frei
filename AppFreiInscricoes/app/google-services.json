@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "455636876996",
+    "firebase_url": "https://frei-pre-inscricoes.firebaseio.com",
+    "project_id": "frei-pre-inscricoes",
+    "storage_bucket": "frei-pre-inscricoes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455636876996:android:f1b425dc5e73875d461391",
+        "android_client_info": {
+          "package_name": "com.nsf.appfreiinscricoes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455636876996-k5d8lc3reeifipaknp7abi11e9nepprk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEAS9gpa3VpM7-36Bbvr8Z6t8nmrB4PRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455636876996-k5d8lc3reeifipaknp7abi11e9nepprk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

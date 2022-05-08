@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="25dp"
+    android:id="@+id/lnlPrincipal"
+    android:background="@color/Branco"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="35dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vamos lá!"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preencha todos os campos para se cadastrar em nosso app."
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="8dp"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Nome -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_rounded"
+                android:padding="5dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/ic_people"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:theme="@style/EditTextHint"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp">
+
+                    <EditText
+                        android:id="@+id/txtNome"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:hint="Nome"
+                        android:singleLine="true"
+                        android:textColor="@color/Preto"
+                        android:textCursorDrawable="@null"
+                        android:background="@color/Branco"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- CPF -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_reto"
+                android:padding="5dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/ic_cpf"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:theme="@style/EditTextHint"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp">
+
+                    <com.santalu.maskedittext.MaskEditText
+                        android:id="@+id/txtCPF"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:singleLine="true"
+                        android:hint="CPF"
+                        android:textColor="@color/Preto"
+                        android:textCursorDrawable="@null"
+                        android:background="@color/Branco"
+                        android:inputType="number"
+                        app:met_mask="###.###.###-##"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Data nascimento -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_reto"
+                android:padding="5dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/ic_calendario"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:theme="@style/EditTextHint"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp">
+
+                    <com.santalu.maskedittext.MaskEditText
+                        android:id="@+id/txtDataNascimento"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:hint="Data de nascimento"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="@color/Preto"
+                        android:textCursorDrawable="@color/colorPrimary"
+                        app:met_mask="##/##/####"
+                        android:background="@color/Branco"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_reto"
+                android:padding="5dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/send"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:theme="@style/EditTextHint"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp">
+
+                    <EditText
+                        android:id="@+id/txtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:hint=" E-mail"
+                        android:singleLine="true"
+                        android:textColor="@color/Preto"
+                        android:textCursorDrawable="@null"
+                        android:background="@color/Branco"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- senha -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_reto"
+                android:padding="5dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/ic_key"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:theme="@style/EditTextHint"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp">
+
+                    <EditText
+                        android:id="@+id/txtSenha"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:hint="Senha"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:textColor="@color/Preto"
+                        android:textCursorDrawable="@null"
+                        android:background="@color/Branco"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- confirmar senha -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_rounded_bottom"
+                android:padding="5dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/ic_key"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:theme="@style/EditTextHint"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp">
+
+                    <EditText
+                        android:id="@+id/txtConfirmaSenha"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:hint="Confirme sua senha"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:textColor="@color/Preto"
+                        android:textCursorDrawable="@null"
+                        android:background="@color/Branco"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnCadastrar"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Cadastrar"
+                android:textStyle="bold"
+                android:background="@drawable/button_rounded_azul"
+                android:textColor="@color/Branco">
+            </Button>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

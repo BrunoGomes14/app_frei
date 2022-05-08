@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Branco"
+    tools:context=".telas.FrmNavegador">
+
+    <include layout="@layout/toolbar" android:visibility="gone" android:id="@+id/toolbar"/>
+
+    <WebView
+        android:id="@+id/wvPagina"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/lnlVideo"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtube"
+            android:layout_width="match_parent"
+            app:showFullScreenButton="false"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgVoltar"
+                android:layout_margin="15dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_back"/>
+        </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnlImg"
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgLoad"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/load_principal"/>
+
+    </LinearLayout>
+
+    <include layout="@layout/placeholder_connection"
+        android:visibility="gone"/>
+
+</LinearLayout>

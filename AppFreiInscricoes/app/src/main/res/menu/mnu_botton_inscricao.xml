@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/candidato"
+        android:icon="@drawable/ic_people_white"
+        android:title="Candidato"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/cadidatopt2"
+        android:icon="@drawable/ic_people_white_plus"
+        android:title="Cadidato+"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/curso"
+        android:icon="@drawable/ic_parents"
+        android:title="Responsável"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/cursopt2"
+        android:icon="@drawable/ic_books"
+        android:title="Curso"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/infoExtra"
+        android:icon="@drawable/ic_more_info"
+        android:title="Informações"
+        app:showAsAction="ifRoom"></item>
+
+</menu>

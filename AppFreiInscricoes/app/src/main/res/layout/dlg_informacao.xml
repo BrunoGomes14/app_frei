@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="350dp"
+    android:background="@drawable/dialog_rounded">
+
+    <Button
+        android:id="@+id/btnFechar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="top|center"
+        android:text="x"
+        android:background="@drawable/button_close_rounded">
+    </Button>
+
+    <LinearLayout
+        android:id="@+id/layoutCabecalho"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="10dp"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_marginLeft="17dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_logo_trasparent"></ImageView>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instituto Social \n Nossa Senha de Fátima"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/layoutCabecalho"
+        android:layout_above="@+id/lnlFechar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lblTextoInformacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:padding="17dp"
+            android:text="Faltam 5 mes(es) e 21 dia(s) para o inicio das incrições"
+            android:textStyle="bold"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:textColor="@color/Preto"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="Dúvidas?"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:textColor="@color/Preto"/>
+
+            <TextView
+                android:id="@+id/lblFaleConosco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text=" Fale conosco"
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryDark"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lnlFechar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/button_rounded"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fechar"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00A1F8</color>
+    <color name="colorPrimaryDark">#2C3DB6</color>
+    <color name="colorAccent">#E4E4E4</color>
+    <color name="Branco">#FFFFFF</color>
+    <color name="Preto">#000000</color>
+    <color name="cinza_claro">#B7FFFFFF</color>
+    <color name="cinza_claro2">#F3F3F3</color>
+    <color name="cinza_claro3">#CFCECE</color>
+    <color name="cinza_claro4">#F8F8F8</color>
+    <color name="cinza_opaco">#C0717171</color>
+    <color name="verde_claro">#19EF00</color>
+    <color name="vermelho">#FF0303</color>
+    <color name="cinza">#7A7A7A</color>
+    <color name="cinza2">#D5D3D3</color>
+    <color name="cinza_escuro">#494848</color>
+    <color name="verde_agua">#00cfad</color>
+    <color name="preto_opaco">#B0000000</color>
+    <color name="vermelho_claro">#ff7d81</color>
+    <color name="azul">#00A1F8</color>
+    <color name="azul_escuro">#003758</color>
+    <color name="colorPrimaryOld">#255AE6</color>
+    <color name="cinza_clarim">#9FF4F4F4</color>
+    <color name="background">#dddddd</color>
+    <color name="cinza_grafite">#8f8f8f</color>
+    <color name="card_container">#f6f6f6</color>
+    <color name="content">#999da4</color>
+    <color name="content2">#A9ADB5</color>
+
+</resources>

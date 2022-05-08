@@ -1,0 +1,1952 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".telas.FrmInscricao"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cdlPrincipal"
+    android:background="@color/Branco">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_scrollFlags="enterAlwaysCollapsed"
+                android:background="@color/colorPrimary"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_principal"
+            android:layout_below="@+id/appBarLayout"
+            android:layout_above="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:orientation="vertical">
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerEffect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                shimmer:duration="800">
+
+                <!-- Load da tela -->
+                <LinearLayout
+                    android:padding="17dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/placeholder_insc" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <!-- Campos -->
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:paddingRight="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <!-- Candidato -->
+                    <LinearLayout
+                        android:id="@+id/layoutCandidato"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@color/Branco">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height  ="wrap_content"
+                                android:text="Dados Pessoais do Candidato"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold"
+                                android:textSize="15sp"
+                                android:paddingTop="10dp"/>
+
+                            <!-- Nome -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/edittext_rounded"
+                                android:padding="5dp"
+                                android:layout_marginTop="15dp"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="8dp"
+                                    android:src="@drawable/ic_people"/>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:theme="@style/EditTextHint"
+                                    android:layout_marginRight="30dp"
+                                    android:gravity="center"
+                                    android:paddingTop="10dp"
+                                    android:clipToPadding="false"
+                                    android:layout_marginLeft="5dp">
+
+                                    <EditText
+                                        android:id="@+id/txtNomeCandidato"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="35dp"
+                                        android:hint="Nome"
+                                        android:text="teste"
+                                        android:inputType="textCapSentences"
+                                        android:maxLength="60"
+                                        android:padding="4dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Preto"
+                                        android:textCursorDrawable="@null"
+                                        android:background="@color/Branco"/>
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <!-- Email -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/edittext_reto"
+                                android:padding="5dp"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:src="@drawable/send"/>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:theme="@style/EditTextHint"
+                                    android:layout_marginRight="30dp"
+                                    android:gravity="center"
+                                    android:clipToPadding="false"
+                                    android:paddingTop="10dp"
+                                    android:layout_marginLeft="5dp">
+
+                                    <com.santalu.maskedittext.MaskEditText
+                                        android:id="@+id/txtEmail"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="35dp"
+                                        android:singleLine="true"
+                                        android:hint="E-mail"
+                                        android:textColor="@color/Preto"
+                                        android:textCursorDrawable="@null"
+                                        android:background="@color/Branco"
+                                        android:maxLength="60"/>
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <!-- Telefone -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/edittext_reto"
+                                android:padding="5dp"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:src="@drawable/ic_phone"/>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:theme="@style/EditTextHint"
+                                    android:layout_marginRight="30dp"
+                                    android:gravity="center"
+                                    android:clipToPadding="false"
+                                    android:paddingTop="10dp"
+                                    android:layout_marginLeft="5dp">
+
+                                    <EditText
+                                        android:id="@+id/txtTelefoneCandidato"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="35dp"
+                                        android:singleLine="true"
+                                        android:hint="Telefone"
+                                        android:textColor="@color/Preto"
+                                        android:textCursorDrawable="@null"
+                                        android:background="@color/Branco"
+                                        android:inputType="text"/>
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <!-- Data nascimento -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/edittext_reto"
+                                android:padding="5dp"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:src="@drawable/ic_calendario"/>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:theme="@style/EditTextHint"
+                                    android:layout_marginRight="30dp"
+                                    android:gravity="center"
+                                    android:paddingTop="4dp"
+                                    android:clipToPadding="false"
+                                    android:layout_marginLeft="5dp">
+
+                                    <com.santalu.maskedittext.MaskEditText
+                                        android:id="@+id/txtDataNascimentoCandidato"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="35dp"
+                                        android:hint="Data de de nascimento"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Preto"
+                                        android:textCursorDrawable="@null"
+                                        android:background="@color/Branco"
+                                        android:inputType="number"
+                                        android:imeOptions="actionDone"
+                                        app:met_mask="##/##/####"/>
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <!-- Sexo -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:orientation="horizontal"
+                                android:background="@drawable/edittext_rounded_bottom"
+                                android:padding="5dp"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:src="@drawable/ic_people"/>
+
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/cboSexoCandidato"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:layout_marginLeft="5dp"/>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold"
+                                android:textSize="15sp"
+                                android:layout_marginTop="10dp"
+                                android:text="Documentos de Identificação"
+                                android:paddingTop="10dp"/>
+
+                            <!-- CPF -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/edittext_rounded"
+                                android:padding="5dp"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:src="@drawable/ic_cpf"/>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:theme="@style/EditTextHint"
+                                    android:layout_marginRight="30dp"
+                                    android:gravity="center"
+                                    android:clipToPadding="false"
+                                    android:paddingTop="10dp"
+                                    android:layout_marginLeft="5dp">
+
+                                    <com.santalu.maskedittext.MaskEditText
+                                        android:id="@+id/txtCPFCandidato"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="35dp"
+                                        android:singleLine="true"
+                                        android:hint="CPF"
+                                        android:textColor="@color/Preto"
+                                        android:textCursorDrawable="@null"
+                                        android:background="@color/Branco"
+                                        android:inputType="number"
+                                        app:met_mask="###.###.###-##"/>
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <!-- RG -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/edittext_reto"
+                                android:padding="5dp"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:src="@drawable/ic_rg"/>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:theme="@style/EditTextHint"
+                                    android:layout_marginRight="30dp"
+                                    android:gravity="center"
+                                    android:clipToPadding="false"
+                                    android:paddingTop="10dp"
+                                    android:layout_marginLeft="5dp">
+
+                                    <com.santalu.maskedittext.MaskEditText
+                                        android:id="@+id/txtRGCandidato"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="35dp"
+                                        android:singleLine="true"
+                                        android:hint="R.G"
+                                        android:textColor="@color/Preto"
+                                        android:textCursorDrawable="@null"
+                                        android:background="@color/Branco"
+                                        android:inputType="textCapCharacters"
+                                        android:maxLength="12"/>
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <!-- Orgao -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/edittext_reto"
+                                android:padding="5dp"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:src="@drawable/ic_rg"/>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:theme="@style/EditTextHint"
+                                    android:layout_marginRight="30dp"
+                                    android:gravity="center"
+                                    android:clipToPadding="false"
+                                    android:paddingTop="10dp"
+                                    android:layout_marginLeft="5dp">
+
+                                    <EditText
+                                        android:id="@+id/txtOrgaoRGCandidato"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="35dp"
+                                        android:hint="Orgão"
+                                        android:inputType="textCapSentences"
+                                        android:maxLength="60"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Preto"
+                                        android:textCursorDrawable="@null"
+                                        android:background="@color/Branco"/>
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <!-- Data de emissão -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/edittext_rounded_bottom"
+                                android:padding="5dp"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:src="@drawable/ic_calendario"/>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:theme="@style/EditTextHint"
+                                    android:layout_marginRight="30dp"
+                                    android:gravity="center"
+                                    android:clipToPadding="false"
+                                    android:paddingTop="4dp"
+                                    android:layout_marginLeft="5dp">
+
+                                    <com.santalu.maskedittext.MaskEditText
+                                        android:id="@+id/txtDataEmissaoRGCandidato"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="35dp"
+                                        android:hint="Data de Emissão"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Preto"
+                                        android:textCursorDrawable="@null"
+                                        android:background="@color/Branco"
+                                        android:inputType="number"
+                                        app:met_mask="##/##/####"/>
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="190dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/layoutVoltar"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <ImageView
+                                        android:layout_width="35dp"
+                                        android:layout_height="35dp"
+                                        android:src="@drawable/ic_arrow_left_blue"/>
+
+                                    <TextView
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Voltar"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/colorPrimary"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/layoutProximo"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_marginRight="5dp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Próximo"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/colorPrimary"/>
+
+                                    <ImageView
+                                        android:layout_width="35dp"
+                                        android:layout_height="35dp"
+                                        android:src="@drawable/ic_arrow_right_color_primary"/>
+
+                                </LinearLayout>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Continuacao candidato -->
+                    <LinearLayout
+                        android:id="@+id/layoutCandidatoContinuacao"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@color/Branco"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height  ="wrap_content"
+                            android:text="Nascimento"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:paddingTop="10dp"/>
+
+                        <!-- Cidade -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded"
+                            android:padding="5dp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_endereco">
+
+                            </ImageView>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtCidadeNascimento"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Cidade"
+                                    android:inputType="textCapWords"
+                                    android:maxLength="60"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- UF -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_mappoint"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <com.santalu.maskedittext.MaskEditText
+                                    android:id="@+id/txtUFNascimento"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="UF"
+                                    android:inputType="textCapCharacters"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"
+                                    app:met_mask="##"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- Nascionalidade -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded_bottom"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_endereco"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtNascionalidade"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Nacionalidade"
+                                    android:singleLine="true"
+                                    android:maxLength="60"
+                                    android:inputType="textCapSentences"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height  ="wrap_content"
+                            android:text="Residência"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:layout_marginTop="15dp"
+                            android:textSize="15sp"
+                            android:paddingTop="10dp"/>
+
+                        <!-- CEP -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded"
+                            android:padding="5dp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_mappoint"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <com.santalu.maskedittext.MaskEditText
+                                    android:id="@+id/txtCEP"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="CEP"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"
+                                    android:inputType="number"
+                                    android:maxLength="9"
+                                    app:met_mask="#####-###"
+                                    android:focusableInTouchMode="true"
+                                    android:imeOptions="actionSearch"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- Cidade  -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_endereco"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtCidadeResidencia"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Cidade"
+                                    android:maxLength="45"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- UF -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_endereco"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtUFResidencia"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="UF"
+                                    android:maxLength="2"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- ENDERECO -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_endereco"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtEndereco"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Endereço"
+                                    android:maxLength="100"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- Bairro -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_endereco"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtBairro"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Bairro"
+                                    android:maxLength="60"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- Numero -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_numero"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtNumeroCasa"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Nº"
+                                    android:singleLine="true"
+                                    android:maxLength="5"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"
+                                    android:inputType="number"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- Complemento -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded_bottom"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_endereco"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtComplemento"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Complemento"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="230dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/layoutVoltarLtCandidatoCont"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:src="@drawable/ic_arrow_left_color_primary"/>
+
+                                <TextView
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Voltar"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/colorPrimary"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layoutProximoLtCandidatoCont"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_marginRight="5dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Próximo"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/colorPrimary"/>
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:src="@drawable/ic_arrow_right_color_primary"/>
+
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <!-- Curso -->
+                    <LinearLayout
+                        android:id="@+id/layoutCurso"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/Branco"
+                        android:visibility="gone">
+
+
+                        <!-- Primeiro responsável -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height  ="wrap_content"
+                            android:text="Responsável"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:paddingTop="10dp"/>
+
+                        <!-- Nome -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded"
+                            android:padding="5dp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_people"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtNomePrimeiroResponsavel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Nome"
+                                    android:inputType="textCapSentences"
+                                    android:maxLength="60"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- Telefone 1 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="30dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_phone"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtTelefonePrincipalResponsavelPrimeiro"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Telefone"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- Telefone 2 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_phone"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtTelefoneSecundarioPrimeiroResponsavel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="2º Telefone"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- E-mail -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/send"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtEmailPrimeiroResponsavel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="E-mail"
+                                    android:maxLength="90"
+                                    android:imeOptions="actionDone"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- Parentesco -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded_bottom"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="8dp"
+                                android:src="@drawable/ic_people"/>
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/cboParentesco"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"/>
+
+                        </LinearLayout>
+
+                        <!-- Segundo responsável -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height  ="wrap_content"
+                            android:text="2º Responsável"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:paddingTop="15dp"/>
+
+                        <!-- Nome -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded"
+                            android:padding="5dp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_people"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtNomeSegundoResponsavel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Nome"
+                                    android:inputType="textCapSentences"
+                                    android:maxLength="60"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- Telefone 1 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_phone"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtTelefonePrincipalResponsavelSegundo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Telefone"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- Telefone 2 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_phone"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtTelefoneSecundarioSegundoResponsavel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="2º Telefone"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- E-mail -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/send"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtEmailSegundoResponsavel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="E-mail"
+                                    android:maxLength="90"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- Parentesco -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded_bottom"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_people"/>
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/cboParentescoSegundo"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"/>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="190dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/layoutVoltarLtCurso"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:src="@drawable/ic_arrow_left_color_primary"/>
+
+                                <TextView
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Voltar"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/colorPrimary"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layoutProximoLtCurso"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_marginRight="5dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Próximo"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/colorPrimary"/>
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:src="@drawable/ic_arrow_right_color_primary"/>
+
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <!-- Curso continuação -->
+                    <LinearLayout
+                        android:id="@+id/layoutCursoContinuacao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <!-- texto Escola -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height  ="wrap_content"
+                            android:text="Escolaridade Atual"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:paddingTop="10dp"/>
+
+                        <!-- Escolaridade -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded"
+                            android:padding="5dp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_morterboard"/>
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/cboEscolaridade"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"/>
+
+                        </LinearLayout>
+
+                        <!-- Tipo de escola -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_school"/>
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/cboTipoEscola"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"/>
+
+                        </LinearLayout>
+
+                        <!-- Nome escola -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded_bottom"
+                            android:padding="5dp"
+                            android:maxLength="60"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_school2"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <com.santalu.maskedittext.MaskEditText
+                                    android:id="@+id/txtEscola"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Nome da Escola"
+                                    android:inputType="textCapSentences"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"
+                                    android:maxLength="60"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+
+                        <!-- texto Curso -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height  ="wrap_content"
+                            android:text="Curso inscrição"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:paddingTop="15dp"/>
+
+                        <!-- Primeirar opção -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded"
+                            android:padding="5dp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_book"/>
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/cboCursoPrimeiro"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"/>
+                        </LinearLayout>
+
+                        <!-- Periodo primeira opção -->
+                        <LinearLayout
+                            android:id="@+id/lnlCboPeriodoPrimeiro"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_clock"/>
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/cboPeriodoPrimeiro"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"/>
+                        </LinearLayout>
+
+                        <!-- Segunda opção -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded_bottom"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_book"/>
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/cboCursoSegundo"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"/>
+
+                        </LinearLayout>
+
+                        <!-- Periodo segunda opção opção -->
+                        <LinearLayout
+                            android:id="@+id/lnlCboPeriodoSegundo"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_clock"/>
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/cboPeriodoSegundo"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"/>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/layoutVoltarLtCursoCont"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:src="@drawable/ic_arrow_left_color_primary"/>
+
+                                <TextView
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Voltar"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/colorPrimary"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layoutProximoLtCursoCont"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_marginRight="5dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Próximo"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/colorPrimary"/>
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:src="@drawable/ic_arrow_right_color_primary"/>
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!-- Informacoes extra -->
+                    <LinearLayout
+                        android:id="@+id/layoutInformacoesExtra"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <!-- Como conheceu -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded"
+                            android:padding="5dp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_question"/>
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/cboComoConheceu"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"/>
+
+                        </LinearLayout>
+
+                        <!-- Renda -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_income"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <EditText
+                                    android:id="@+id/txtRendaFamiliar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:singleLine="true"
+                                    android:hint="Renda Familiar"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"
+                                    android:maxLength="19"
+                                    android:inputType="numberDecimal"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- Qtd pessoas -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_reto"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_group_peoples"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <com.santalu.maskedittext.MaskEditText
+                                    android:id="@+id/txtQtdPessoasResidencia"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:singleLine="true"
+                                    android:hint="Qtd de pessoas em sua residência"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"
+                                    android:maxLength="3"
+                                    android:inputType="number"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <!-- qtd pessoas trabalhando -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/edittext_rounded_bottom"
+                            android:padding="5dp"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_workgroup"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:theme="@style/EditTextHint"
+                                android:layout_marginRight="30dp"
+                                android:gravity="center"
+                                android:clipToPadding="false"
+                                android:paddingTop="10dp"
+                                android:layout_marginLeft="5dp">
+
+                                <com.santalu.maskedittext.MaskEditText
+                                    android:id="@+id/txtQtdPessoasTrabalhando"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:singleLine="true"
+                                    android:maxLength="3"
+                                    android:hint="Quantas pessoas trabalham na casa?"
+                                    android:textColor="@color/Preto"
+                                    android:textCursorDrawable="@null"
+                                    android:background="@color/Branco"
+                                    android:inputType="number"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/layoutVoltarLtInfoExtra"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_arrow_left_color_primary"/>
+
+                                <TextView
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Voltar"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/colorPrimary"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lnlEnviar"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:visibility="visible">
+
+                                <TextView
+                                    android:id="@+id/imgEnviar"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Enviar"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/colorPrimary"/>
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="25dp"
+                                    android:src="@drawable/ic_check_color_primary"/>
+
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <include layout="@layout/placeholder_connection"
+                android:visibility="gone"
+                android:id="@+id/errorConection"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/mnu_botton_inscricao"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/button_rounded"
+            app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
+            app:itemTextColor="@drawable/bottom_nav_icon_color_selector"/>
+
+    </RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

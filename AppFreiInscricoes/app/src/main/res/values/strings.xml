@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Frei Online</string>
+
+    <string name="text_boas_vindas">Dúvidas? Consulte o FAQ ou contate-nos pelos canais disponíveis na opção Sobre o Instituto.</string>
+
+    <string name="texto_cursos">Aqui é possível encontrar um pouco sobre nossos cursos, selecione algum para ver um pouco sobre eles.</string>
+
+    <string name="texto_concluido">Para finalizar a inscrição, agende uma data para efetuar o pagamento da taxa no instituto.\nNa tela de informações da pré-inscrição </string>
+
+    <string name="textoSobre">O intuito deste aplicativo é apresentar nossos cursos e realizar a pré-inscrição do candidato dentro do período de inscrição. A pré-inscrição não garante a inscrição do candidato, para concluir a inscrição é necessário comparecer ao instituto com o código de pré-inscrição, os documentos obrigatórios e pagar a taxa de inscrição.</string>
+    <string name="data_de_nascimento">Data de nascimento</string>
+    <string name="dados_usuario">usuarioInfo</string>
+    <string name="dados_usuario_nome">usuarioNome</string>
+    <string name="dados_usuario_cod_insc">usuarioCod</string>
+    <string name="dados_usuario_cod_insc_ano">usuarioCodAno</string>
+    <string name="dados_usuario_data_nascimento">usuarioNascimento</string>
+    <string name="dados_usuario_id_notificacao">usuarioIdNotifica</string>
+    <string name="dados_usuario_cpf">usuarioCPF</string>
+    <string name="dados_usuario_id">usuarioID</string>
+    <string name="dados_usuario_id_codigo">usuarioCodInsc</string>
+    <string name="dados_usuario_curso_primeiro">usuarioCurso1</string>
+    <string name="dados_usuario_curso_segundo">usuarioCurso2</string>
+    <string name="dados_usuario_periodo_primeiro">usuarioPeriodo1</string>
+    <string name="dados_usuario_periodo_segundo">usuarioPeriodo2</string>
+    <string name="dados_usuario_confirmacao_insc">usuarioConfirmacaoInsc</string>
+    <string name="dados_usuario_token">usuarioToken</string>
+    <string name="dados_usuario_agendamento_data">usuarioAgendamentoData</string>
+    <string name="dados_usuario_agendamento_hora">usuarioAgendamentoHora</string>
+    <string name="dados_usuario_agendamento_compareceu">usuarioCompareceuAgend</string>
+    <string name="dados_usuario_primeiro_acesso">usuarioAcesso</string>
+    <string name="dados_usuario_agendamento">usuarioAgend</string>
+    <string name="dados_usuario_mensagem">usuarioMensag</string>
+    <string name="dados_usuario_email">usuarioEmail</string>
+    <string name="dados_usuario_token_autentic">usuarioTokenAutentic</string>
+    <string name="endereco_frei">AV. CEL. OCTAVIANO DE FREITAS COSTA, n°463\n RUA AVE MARIA, 78 JD. VELEIROS, SÃO PAULO-SP</string>
+    <string name="contato_frei">(011) 5687-8876\n\n(011) 3798-5036</string>
+    <string name="channel_name">Avisos</string>
+    <string name="channel_description">Informações</string>
+</resources>

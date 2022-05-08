@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="250dp"
+    android:layout_height="120dp"
+    tools:context=".ultil.dialogs.DialogSair"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/dialog_rounded">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="26dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deseja realmente sair?"
+            android:textColor="@color/Preto">
+        </TextView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/button_rounded_bottom"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:layout_height="40dp">
+
+        <TextView
+            android:id="@+id/lblNao"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/Branco"
+            android:layout_weight="50"
+            android:lineSpacingExtra="16sp"
+            android:textStyle="bold"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="NÃO"/>
+
+        <LinearLayout
+            android:id="@+id/lnlseparacao"
+            android:orientation="vertical"
+            android:layout_width="0.4dp"
+            android:layout_height="match_parent"
+            android:background="@color/Branco"/>
+
+        <TextView
+            android:id="@+id/lblSim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/Branco"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_weight="50"
+            android:lineSpacingExtra="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="SIM"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".telas.FrmLogin"
+    android:background="@color/Branco"
+    android:id="@+id/layout">
+
+    <LinearLayout
+        android:id="@+id/img_logo"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="29dp"
+            android:src="@drawable/img_logo_trasparent_cortado"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instituto Social\nNossa Senhora de Fátima"
+            android:textSize="10sp"
+            android:textColor="@color/cinza"
+            android:layout_marginTop="3dp"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_marginTop="27dp"
+            android:paddingLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bem vindo,"
+                android:textSize="24sp"
+                android:textColor="@color/cinza_escuro"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Realize o login para continuar"
+                android:layout_marginTop="1dp"
+                android:textSize="14dp"
+                android:textColor="@color/cinza"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_login"
+        android:layout_below="@+id/img_logo"
+        android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <!-- email -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/edittext_rounded"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_people"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:theme="@style/EditTextHint"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:clipToPadding="false"
+                android:layout_marginLeft="5dp">
+
+                <EditText
+                    android:id="@+id/txtUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:hint="E-mail"
+                    android:cursorVisible="true"
+                    android:maxLength="60"
+                    android:singleLine="true"
+                    android:textColor="@color/Preto"
+                    android:textCursorDrawable="@null"
+                    android:background="@color/Branco"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/edittext_rounded_bottom"
+            android:padding="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/ic_key"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:theme="@style/EditTextHint"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:clipToPadding="false"
+                android:layout_marginLeft="5dp">
+
+                <EditText
+                    android:id="@+id/txtSenha"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:hint="Senha"
+                    android:inputType="textPassword"
+                    android:maxLength="35"
+                    android:singleLine="true"
+                    android:textColor="@color/Preto"
+                    android:textCursorDrawable="@null"
+                    android:background="@color/Branco"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="5dp"
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/lblRecSenha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Esqueceu a senha?"
+                android:textSize="13sp"
+                android:textColor="@color/colorPrimaryDark"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/btnEntrar"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Entrar"
+            android:gravity="center"
+            android:background="@drawable/button_rounded_azul"
+            android:textColor="@color/Branco">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Entrar"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnlCadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_rounded_tranparente">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Criar conta"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
